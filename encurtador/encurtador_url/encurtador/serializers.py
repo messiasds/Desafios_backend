@@ -1,15 +1,11 @@
 from rest_framework import serializers
-from . import models
 
-class OriginalURLSerializer(serializers.ModelSerializer):
+class NewURLSerializer(serializers.Serializer):
 
-    class Meta:
-        model = models.URL
-        fields = ['original_url']
+    newUrl = serializers.CharField(source='new_url')
+    expirationDate = serializers.DateField(source='validade')
 
-class NewURlSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = models.URL
-        fields = ['new_url','validade']
-    
+class OriginalURlSerializer(serializers.Serializer):
+
+    originalUrl = serializers.CharField(source='original_url')

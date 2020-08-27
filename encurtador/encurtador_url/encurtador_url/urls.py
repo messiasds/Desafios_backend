@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 from encurtador.views import EncurtadorURL
+from encurtador import urls as app_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', EncurtadorURL.as_view(), name='root')
+    path('', include(app_urls))
 ]

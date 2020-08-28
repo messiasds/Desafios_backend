@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
-from encurtador.views import EncurtadorURL
-from encurtador import urls as app_urls
+from core.views import EncurtadorURL
+from core import urls as app_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
